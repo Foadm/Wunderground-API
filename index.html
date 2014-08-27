@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wunderground API Tech Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <LINK href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+    <script language="JavaScript" src="wunderground.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="blue">Weather Underground Tech Challenge</h1>
+        <div class="row">
+            <form class="form-inline" id="zip-submit">
+                <div class="form-group">
+                    <label class="sr-only" for="location_one">Zip Code 1</label>
+                    <input type="text" class="form-control" id="location_one" placeholder="First Location Zip">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="location_two">Zip Code 2</label>
+                    <input type="text" class="form-control" id="location_two" placeholder="Second Location Zip">
+                </div>
+                <button type="submit" class="btn btn-primary">Enter</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-6 gray" id="location-one">
+            </div>
+            <div class="col-md-6 gray" id="location-two">
+            </div>
+        </div>
+    </div>
+    <script id="location-template" type="text/x-handlebars-template">
+        <div class="location">
+            <h3 class="gray-text">Weather Condition in {{location}}</h3>
+            <h4 class="gray-text">
+                Weather condition in {{location}} is {{weather}}
+                <img class="icon" src="{{icon}}" alt="condition icon"/>
+            </h4>
+            <h4 class="gray-text">Temperature : {{temp}} &#x2109;</h4>
+        </div>
+    </script>
+</body>
+</html>
